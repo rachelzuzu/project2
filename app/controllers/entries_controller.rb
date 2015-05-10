@@ -4,11 +4,6 @@ class EntriesController < ApplicationController
   protect_from_forgery with: :exception
 
   before_action :authenticate_user!
-  
-attr
-  def user
-    @current_user = User.find(params[:id])
-  end
 
   def index
     @entries = Entry.all
@@ -40,7 +35,7 @@ attr
     if @entry.save
       # create a new entry, if the entry saves 
       # we add it to current_user entries
-      current_user.entries << @entry
+      current_user.entry << @entry
       redirect_to @entry
     else
       render 'new'
@@ -64,9 +59,10 @@ attr
     redirect_to entries_path
   end
 
+# made private to make sure it can't be called outside its intended context
 	private
 		def entry_params
-			params.require(:entry).permit(:title, :text, :avatar)
+			params.require(:entry).permit(:date, :food, :mood, :avatar)
 		end
 
 end
