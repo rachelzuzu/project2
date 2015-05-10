@@ -12,8 +12,9 @@ root 'site#index'
 
 
 resources :users do
-  resources :logs
-  resources :entries
+	  resources :logs do
+	  resources :entries
+	end
 end
 
 resources :logs do
