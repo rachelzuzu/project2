@@ -1,6 +1,11 @@
 http://localhost:3000/logs/1/entries/:id
 
 <p>
+	<strong>Date:</strong>
+	<%= @entry.date %>
+</p>
+
+<p>
 	<strong>Food:</strong>
 	<%= @entry.food %>
 </p>
@@ -10,8 +15,9 @@ http://localhost:3000/logs/1/entries/:id
 	<%= @entry.mood %>
 </p>
 
+
 <p>
-	<strong>Date:</strong>
-	<%= @entry.date %>
+	<strong>Image:</strong>
+	<%= image_tag @entry.avatar.url(:thumb) %>
 </p>
 
