@@ -1,1 +1,14 @@
-Entries index.html.erb
+<h3>This is http://localhost:3000/logs/1/entries </h3>
+<%= render 'form' %>
+
+
+<div id="entries-con">
+</div>
+
+<%= link_to "Home", controller: "site" %> |
+<%= link_to "Entries", controller: "entries" %> |
+<%= link_to "Users", controller: "users" %> |
+ <%= link_to 'Edit account', edit_user_registration_path %> |
+  <%= link_to 'Sign in', sign_up_path %> |
+<%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %>
+
