@@ -35,7 +35,7 @@ class EntriesController < ApplicationController
     if @entry.save
       # create a new entry, if the entry saves 
       # we add it to current_user entries
-      current_user.entry << @entry
+      current_user.entries << @entry
       redirect_to entries_path
     else
       render 'new'
