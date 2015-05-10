@@ -1,13 +1,13 @@
 class EntriesController < ApplicationController
 	before_action :authenticate_user!
+  
 
   def user
-  	@user = User.find(params[:id])
+    @current_user = User.find(params[:id])
   end
 
   def index
     @entries = Entry.all
-    @entry = Entry.new
 
     respond_to do |format|
       format.html
@@ -16,48 +16,48 @@ class EntriesController < ApplicationController
   end
 	
 	def show
+    # find the article we are interested in
+    # pass in params[:id] to get :id parameter from request
+    # @ is an instance variable to hold a reference to the entry object
+    @entry = Entry.find(params[:id])
 	end
 
 	def new
+    @entry=Entry.new
 	end
 
 	def edit
+    @entry=Entry.find(params[:id])
 	end
 
   def create
-
-    @entry = Entry.create(params.require(:entry).permit(:food))
-
-    respond_to do |f| 
-      f.html
-      f.json { render json: @entry }
+    @entry = Entry.new(entry_params)
+# saving the model in the database
+    if @entry.save
+      # create a new entry, if the entry saves 
+      # we add it to current_user entries
+      current_user.entries << @entry
+      redirect_to @entry
+    else
+      render 'new'
     end
-
   end
 
   def update
-    # find the `entry`
     @entry = Entry.find(params[:id])
-    # update the entry
-    @entry.update_attributes(params.require(:entry).permit(:completed, :food))
-    # then respond to format
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @entry }
+   
+    if @entry.update(entry_params)
+      redirect_to @entry
+    else
+      render 'edit'
     end
   end
 
   def destroy
-    # find the `entry`
-    entry = Entry.find(params[:id])
-    # delete the `entry`
-    entry.destroy()
+    @entry = Entry.find(params[:id])
+    @entry.destroy
 
-    respond_to do |format|
-      format.html { redirect_to entries_path }
-      format.json { render json: nil, status: 200 }
-    end
+    redirect_to entries_path
   end
 
 	private

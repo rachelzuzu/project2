@@ -16,91 +16,91 @@
 //= require_tree .
 
 
-$(function () {
+// $(function () {
 
-  // grab the `entries-con`
-  var $entriesCon = $("#entries-con");
+//   // grab the `entries-con`
+//   var $entriesCon = $("#entries-con");
 
-  $.get("/entries.json")
-    .done(function (entries) {
-      console.log("All Entries:", entries);
+//   $.get("/entries.json")
+//     .done(function (entries) {
+//       console.log("All Entries:", entries);
 
-      // append each entry
-      entries.forEach(function (entry) {
-        var completed = entry.completed ? "entry-completed" : "";
-        var checked = entry.completed ? "checked" : "";
-        $entriesCon.append("<div class=\"entry "+ completed + "\" data-id=" + entry.id + ">" + 
-                        entry.food + 
-                        "<input type=\"checkbox\" class=\"completed\" " + checked + ">" +
-                        "<button class=\"delete\">Delete</button></div>");
-      });
+//       // append each entry
+//       entries.forEach(function (entry) {
+//         var completed = entry.completed ? "entry-completed" : "";
+//         var checked = entry.completed ? "checked" : "";
+//         $entriesCon.append("<div class=\"entry "+ completed + "\" data-id=" + entry.id + ">" + 
+//                         entry.food + 
+//                         "<input type=\"checkbox\" class=\"completed\" " + checked + ">" +
+//                         "<button class=\"delete\">Delete</button></div>");
+//       });
 
-  });
+//   });
 
-  var $entryForm = $("#new_entry")
-  $entryForm.on("submit", function (event) { 
-    event.preventDefault();
-    console.log("Form submitted", $(this).serialize());
+//   var $entryForm = $("#new_entry")
+//   $entryForm.on("submit", function (event) { 
+//     event.preventDefault();
+//     console.log("Form submitted", $(this).serialize());
 
-    var food = $("#entry_food").val();
-    $.post("/entries.json", {
-      entry: {
-        food: food
-      }
-    }).done(function (createdEntry) {
-      var $entry = $("<div class=\"entry\" data-id=" + createdEntry.id + ">" + 
-                    createdEntry.food + 
-                    "<input type=\"checkbox\" class=\"completed\">" +
-                    "<button class=\"delete\">Delete</button></div>");
+//     var food = $("#entry_food").val();
+//     $.post("/entries.json", {
+//       entry: {
+//         food: food
+//       }
+//     }).done(function (createdEntry) {
+//       var $entry = $("<div class=\"entry\" data-id=" + createdEntry.id + ">" + 
+//                     createdEntry.food + 
+//                     "<input type=\"checkbox\" class=\"completed\">" +
+//                     "<button class=\"delete\">Delete</button></div>");
 
 
-      $entry.find(".completed").attr("checked", createdEntry.completed);
+//       $entry.find(".completed").attr("checked", createdEntry.completed);
 
-      if (createdEntry.completed) {
-        $entry.toggleClass("entry-complete")
-      }
+//       if (createdEntry.completed) {
+//         $entry.toggleClass("entry-complete")
+//       }
 
-      $entriesCon.append($entry);  
-    });
-  });
+//       $entriesCon.append($entry);  
+//     });
+//   });
 
-  // setup a click handler that only
-  //  handle clicks from an element
-  //  with the `.delete` className
-  //  that is inside the $entriesCon
-  $entriesCon.on("click", ".delete", function (event) {
-    alert("Click to delete!");
+//   // setup a click handler that only
+//   //  handle clicks from an element
+//   //  with the `.delete` className
+//   //  that is inside the $entriesCon
+//   $entriesCon.on("click", ".delete", function (event) {
+//     alert("Click to delete!");
 
-    // grab the entire entry
-    var $entry = $(this).closest(".entry");
+//     // grab the entire entry
+//     var $entry = $(this).closest(".entry");
 
-    // send our delete request
-    $.ajax({
-      // grab the data-id attribute
-      url: "/entries/" + $entry.data("id") + ".json",
-      type: "DELETE"
-    }).done(function (){
-      // once we completed the delete
-      $entry.remove();
-    })
-  });
+//     // send our delete request
+//     $.ajax({
+//       // grab the data-id attribute
+//       url: "/entries/" + $entry.data("id") + ".json",
+//       type: "DELETE"
+//     }).done(function (){
+//       // once we completed the delete
+//       $entry.remove();
+//     })
+//   });
 
-  $entriesCon.on("click", ".completed", function () {
+//   $entriesCon.on("click", ".completed", function () {
 
-    var $entry = $(this).closest(".entry");
+//     var $entry = $(this).closest(".entry");
 
-    $.ajax({
-      url: "/entries/" + $entry.data("id") + ".json",
-      type: "PUT",
-      data: {
-        entry: {
-          completed: this.checked
-        }
-      }
-    }).done(function (data) {
-      // update the styling of our entry
-      $entry.toggleClass("entry-complete")
-    })
-  });
+//     $.ajax({
+//       url: "/entries/" + $entry.data("id") + ".json",
+//       type: "PUT",
+//       data: {
+//         entry: {
+//           completed: this.checked
+//         }
+//       }
+//     }).done(function (data) {
+//       // update the styling of our entry
+//       $entry.toggleClass("entry-complete")
+//     })
+//   });
 
-});
+// });
