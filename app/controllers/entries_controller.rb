@@ -1,7 +1,11 @@
 class EntriesController < ApplicationController
-	before_action :authenticate_user!
-  
+	# Prevent CSRF attacks by raising an exception.
+  # For APIs, you may want to use :null_session instead.
+  protect_from_forgery with: :exception
 
+  before_action :authenticate_user!
+  
+attr
   def user
     @current_user = User.find(params[:id])
   end
@@ -62,7 +66,7 @@ class EntriesController < ApplicationController
 
 	private
 		def entry_params
-			params.require(:entry).permit(:title, :text)
+			params.require(:entry).permit(:title, :text, :avatar)
 		end
 
 end
