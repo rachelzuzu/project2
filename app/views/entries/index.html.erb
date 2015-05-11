@@ -1,5 +1,8 @@
 <h3>This is http://localhost:3000/logs/1/entries </h3>
-<h1>Entries</h1>
+<h1>Entries for <%= current_user.email %> </h1>
+<%= link_to "New Entry", new_entry_path %>
+
+
 
 <table>
 <!-- tr defines a row in an html table -->

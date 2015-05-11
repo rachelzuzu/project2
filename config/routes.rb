@@ -12,13 +12,13 @@ root 'site#index'
 
 
 resources :users do
-	  resources :logs do
-	  resources :entries
+	resources :logs do
+	resources :entries
 	end
 end
 
 resources :logs do
-  resources :entries
+	resources :entries
 end
 
 resources :entries

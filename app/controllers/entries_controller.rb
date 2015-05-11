@@ -6,8 +6,8 @@ class EntriesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    # @entries = current_user.entries
-    @entries = Entry.all
+    @entries = current_user.entries
+    # @entries = Entry.all
     respond_to do |format|
       format.html
       format.json { render json: @entries }
@@ -35,7 +35,7 @@ class EntriesController < ApplicationController
     if @entry.save
       # create a new entry, if the entry saves 
       # we add it to current_user entries
-      current_user.entry << @entry
+      current_user.entries << @entry
       redirect_to entries_path
     else
       render 'new'
