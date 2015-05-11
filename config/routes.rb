@@ -1,3 +1,5 @@
+# this is cristina's branch
+
 Rails.application.routes.draw do
 
 root 'site#index'
