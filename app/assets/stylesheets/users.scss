@@ -1,3 +1,20 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+    text-align: center;
+}
+.info {
+    text-align: center;
+}
+.jumbotron {
+    background-color: rgba(240, 240, 240, .9);
+    margin-top: 25%;
+}
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto;
+}
