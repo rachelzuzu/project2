@@ -1,7 +1,6 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
-  attr_accessor :email
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -11,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :logs
   # to grab entries through logs, so I can do user.entries
   has_many :entries, through: :logs
-
+  validates :email, uniqueness:true
   
   # more devise stuff
   def in_role?(role)
