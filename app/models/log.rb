@@ -1,4 +1,4 @@
 class Log < ActiveRecord::Base
-	has_many :entries through :users
+	has_many :entries
 	belongs_to :user
 end
