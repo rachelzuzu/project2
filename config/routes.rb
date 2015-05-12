@@ -8,7 +8,8 @@ devise_for :users
 
 resources :users do
   resources :logs do
-  resources :entries
+  	resources :entries
+  	# , only: [:show, :edit]
   end
 end
 
