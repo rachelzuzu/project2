@@ -1,7 +1,7 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
-  attr_accessor :email
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
