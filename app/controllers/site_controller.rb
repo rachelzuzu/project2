@@ -1,10 +1,7 @@
 class SiteController < ApplicationController
   
-  def index
-  end
-
-    def user
-  	@user = User.find(params[:id])
+  def Index
+  	@user = current_user
   end
 
 end

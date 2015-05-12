@@ -1,8 +1,8 @@
-<h3>This is http://localhost:3000/logs/1/entries </h3>
-<h1>Entries for <%= current_user.email %> </h1>
-<%= link_to "New Entry", new_entry_path %>
 
+<h1>Entries for Log <%=@log.id%></h1>
 
+<!-- to view for new entry for the log that belongs to user -->
+<%= link_to "New Entry", new_user_log_entry_path(current_user, @log) %>
 
 <table>
 <!-- tr defines a row in an html table -->
@@ -12,8 +12,8 @@
 		<th>Food</th>
 		<th>Mood</th>
 	</tr>
-
-	<% @entries.each do |entry| %>
+	<!-- function begins, looping through by entry -->
+	<% @log.entries.each do |entry| %>
 	<tr>
 		<!-- td is a data cell -->
 		<td><%= entry.date %></td>
@@ -21,21 +21,14 @@
 		<td><%= entry.mood %></td>
 		<td><%= image_tag entry.avatar.url(:thumb) %></td>
 
-		<td><%= link_to 'Show', entry_path(entry) %></td>
-        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-        <td><%= link_to 'Destroy', entry_path(entry),
+
+		<td><%= link_to 'Show', user_log_entry_path(current_user, @log, entry) %></td>
+        <td><%= link_to 'Edit', edit_user_log_entry_path(current_user, @log, entry) %></td>
+        <td><%= link_to 'Destroy', user_log_entry_path(current_user, @log, entry),
         	method: :delete,
       		data: {confirm: 'Are you sure?'} %>
       	</td>
 	</tr>
-
+	<!-- function ends -->
 	<% end %>
 </table>
-
-<%= link_to "Home", controller: "site" %> |
-<%= link_to "Entries", controller: "entries" %> |
-<%= link_to "Users", controller: "users" %> |
- <%= link_to 'Edit account', edit_user_registration_path %> |
-  <%= link_to 'Sign in', sign_up_path %> |
-<%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %>
-

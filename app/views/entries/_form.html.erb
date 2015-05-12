@@ -1,7 +1,7 @@
 
 <!-- tells form_for helper this is a form for :entry -->
 
-<%= form_for @entry do |f| %>
+<%= form_for [current_user, @log, @entry] do |f| %>
  
   <% if @entry.errors.any? %>
     <div id="error_explanation">

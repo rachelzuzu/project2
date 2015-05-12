@@ -30,7 +30,7 @@
 //         var completed = entry.completed ? "entry-completed" : "";
 //         var checked = entry.completed ? "checked" : "";
 //         $entriesCon.append("<div class=\"entry "+ completed + "\" data-id=" + entry.id + ">" + 
-//                         entry.food + 
+//                         entry.food +
 //                         "<input type=\"checkbox\" class=\"completed\" " + checked + ">" +
 //                         "<button class=\"delete\">Delete</button></div>");
 //       });
