@@ -60,5 +60,8 @@ group :development, :test do
 
   # faker; g random data
   gem 'ffaker'
+  # gem 'capybara'
+  # gem 'guard-rspec'
+  # gem 'launchy'
 end
 

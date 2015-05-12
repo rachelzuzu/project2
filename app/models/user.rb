@@ -11,8 +11,6 @@ class User < ActiveRecord::Base
   has_many :logs
   # to grab entries through logs, so I can do user.entries
   has_many :entries, through: :logs
-
-  
   # more devise stuff
   def in_role?(role)
       role == @role
@@ -20,7 +18,7 @@ class User < ActiveRecord::Base
 
   def assign_role(role)
     @role = role
-      
+
   end
 
 end
