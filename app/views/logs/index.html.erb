@@ -3,7 +3,6 @@ This is an Index of your logs
 <% current_user.logs.each do |log| %> 
 	<p> Type : <%=log.kind%> 
 		<%=link_to 'View', user_log_path(current_user, log)%>
-		<%= link_to 'Edit', edit_user_log_path(current_user, log) %>
 		<%= link_to 'Delete', user_log_path(current_user, log),
         	method: :delete,
       		data: {confirm: 'Are you sure?'} %> </p>
