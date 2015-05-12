@@ -1,19 +1,9 @@
 <p>A home page will clearly explain what your app is and what it does.<p>
 
+<%if (current_user)  %>
 <%= link_to 'Create and View a Log', user_logs_path(current_user) %> 
 </br>
 </br>
-
-<%= link_to 'Sign in', new_user_session_path %> |
 <%= link_to 'Sign out', destroy_user_session_path %> 
-
-
-
-
-
-
-
-
-
-
-
+<% end  %>
+<%= link_to 'Sign in', new_user_session_path %> 
