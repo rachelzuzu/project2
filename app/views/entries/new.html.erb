@@ -2,3 +2,21 @@
 
 <%= render 'form' %>
 
+
+<form action='get_api' method="GET">
+	<button>Search</button>
+</form>
+
+
+
+<h3>Search for a food</h3>
+
+<%= form_tag("/entries", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<% @food.each do |food| %>
+	<div>Food: <a href='/food?q=<%= food["report"] %>'><%= food["name"] %></div>
+<% end %>
