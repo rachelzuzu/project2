@@ -1,7 +1,3 @@
-<% @foods.each do |food| %>
-	<%= foods["food"] %>
-<% end %>
-
 
 
 <p>
@@ -23,6 +19,10 @@
 <p>
 	<strong>Image:</strong>
 	<%= image_tag @entry.avatar.url(:thumb) %>
+</p>
+
+<p>
+	<strong>Food:</strong>
 </p>
 
 <%= link_to "Back to Log #{@entry.log.id}", user_log_path(current_user, @entry.log) %>
