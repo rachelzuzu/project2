@@ -35,6 +35,9 @@ gem 'pundit'
 # for image upload
 gem "paperclip", "~> 4.2"
 
+#for rspec testing with should allow tests
+gem 'shoulda-matchers', require: false
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
