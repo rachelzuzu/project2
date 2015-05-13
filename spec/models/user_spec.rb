@@ -25,7 +25,7 @@ RSpec.describe User, :type => :model do
   it { should validate_presence_of(:email) }
   it { should validate_uniqueness_of(:email) }
   it { should validate_confirmation_of(:password) }
-  it { should allow_value('foo@domain.com').for(:email) }
+  it { should_not allow_value('foodomain.com').for(:email) }
 
   # it { should respond_to(:authentication_token) }
   # it { should validate_uniqueness_of(:authentication_token) }
