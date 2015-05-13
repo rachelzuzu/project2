@@ -1,4 +1,31 @@
+<div class ="container">
+		<div class = "navbar navbar-default navbar-fixed-top">
+			<button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">	
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+			</button>
+			<div class = "collapse navbar-collapse navHeaderCollapse">
+				<ul class = "nav navbar-nav navbar-left">
+	<%if (current_user)  %>
+				<li class = "Logs"> <%= link_to 'View a Log', user_logs_path(current_user) %> </li>
+				<li class = "SignOut"><%= link_to 'Sign out', destroy_user_session_path %> </li>
+	<%else  %>
+				<li class= "Log In"><%= link_to 'Log In', new_user_session_path %></li>
+                <li class="SignUp"><%= link_to 'Sign up', new_user_registration_path  %></li>
+	<% end  %>
+					<li class="About"><a href="/about">About</a></li>
+					<li class="Index"><%=link_to"Index", root_path  %></li>
+					<li class= "contact"><a href="/contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="jumbotron_entry">
 <h1>New Entry</h1>
 
 <%= render 'form' %>
-
+</div>
+</div>
