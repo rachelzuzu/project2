@@ -6,7 +6,7 @@
 </p>
 
 <p>
-	<strong>Food:</strong>
+	<strong>Entry:</strong>
 	<%= @entry.food %>
 </p>
 
@@ -21,4 +21,6 @@
 	<%= image_tag @entry.avatar.url(:thumb) %>
 </p>
 
-<%= link_to "Back to Log #{@entry.log.id}", user_log_path(current_user, @entry.log) %>
+<%= link_to "Back", user_log_path(current_user, @entry.log) %>
+
+<!-- "Back to Log #{@entry.log.id}" -->
