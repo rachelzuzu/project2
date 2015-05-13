@@ -60,9 +60,13 @@ group :development, :test do
   # factory girl makes object/model creation w values
   gem 'factory_girl_rails', "~> 4.0"
 
-
+  gem 'database_cleaner'
   # faker; g random data
   gem 'ffaker'
+
+  gem 'capybara'
+
+  gem 'shoulda-matchers'
   # gem 'capybara'
   # gem 'guard-rspec'
   # gem 'launchy'
