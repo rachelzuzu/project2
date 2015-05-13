@@ -1,8 +1,4 @@
-<h3>Log <%=@log.id%> </h3>
-<p>This log is for: <%=@log.kind%></p>
-
-
-<h1>Entries for Log <%=@log.id%></h1>
+<h1>Nutrition Log Entries</h1>
 
 <!-- to view for new entry for the log that belongs to user -->
 <%= link_to "New Entry", new_user_log_entry_path(current_user, @log) %>
@@ -12,17 +8,17 @@
 	<tr>
 		<!-- th is a header cell -->
 		<th>Date</th>
-		<th>Food</th>
-		<th>Mood</th>
+		<!-- <th>Food</th>
+		<th>Mood</th> -->
 	</tr>
 	<!-- function begins, looping through by entry -->
 	<% @log.entries.each do |entry| %>
 	<tr>
 		<!-- td is a data cell -->
 		<td><%= entry.date %></td>
-		<td><%= entry.food %></td>
+		<!-- <td><%= entry.food %></td>
 		<td><%= entry.mood %></td>
-		<td><%= image_tag entry.avatar.url(:thumb) %></td>
+		<td><%= image_tag entry.avatar.url(:thumb) %></td> -->
 
 
 		<td><%= link_to 'Show', user_log_entry_path(current_user, @log, entry) %></td>
@@ -36,6 +32,7 @@
 	<% end %>
 </table>
 
+<%= link_to 'Back', user_logs_path(current_user) %>
 
 
 
