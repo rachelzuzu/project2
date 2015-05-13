@@ -199,7 +199,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
-  factory_girl_rails (~> 4.0)
+  factory_girl_rails (~> 4.5.0)
   ffaker
   jbuilder (~> 2.0)
   jquery-rails

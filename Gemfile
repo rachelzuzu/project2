@@ -58,7 +58,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
 
   # factory girl makes object/model creation w values
-  gem 'factory_girl_rails', "~> 4.0"
+  gem 'factory_girl_rails', "~> 4.5.0", :require => false
 
 
   # faker; g random data
