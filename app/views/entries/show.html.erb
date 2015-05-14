@@ -17,14 +17,41 @@
 
 <p>
 	<strong>Food:</strong>
+	<% @entry.reports.each do |report| %>
+		<p>Name <%= report.name %></p>
+		<p>Calories <%= report.kcal %> kcal</p>
+		<p>Protein <%= report.protein %> g</p>
+		<p>Carbs <%= report.carb %> g</p>
+		<p>Fat <%= report.fat %> g</p>
+	<% end %>
 </p>
 
 <p>
-    <%= form_tag('/entries/:entry_id/reports', method: "get") do %>
+    <%= form_for entry_path, :method => 'get' do %>
       <%= label_tag(:q, "Search for food:") %> <br>
       <%= text_field_tag(:q) %>
       <%= submit_tag("Search") %>
     <% end %>
+</p>
+
+<p>
+	<% if @foods.present? %>
+	<table>
+		<% @foods.each do |f| %>
+			<tr>
+				<td>
+					<%= f["name"] %>
+				</td>
+				<td>
+					<%= form_for entry_path, :method => 'PUT' do %>
+					  <%= hidden_field(nil, :ndbno, value: f["ndbno"]) %>
+					  <%= submit_tag("Add to Entry") %>
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+	<% end %>
 </p>
 
 

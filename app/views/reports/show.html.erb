@@ -20,4 +20,8 @@
 
 
 <br>
-<button>Save this item to entry</button>
+<p>
+    <%= form_tag(:entry, '/entries/:entry_id/reports', method: "post") do %>
+      <%= submit_tag("Save this item to entry") %>
+    <% end %>
+</p>

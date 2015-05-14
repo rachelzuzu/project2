@@ -60,5 +60,8 @@ group :development, :test do
 
   # faker; g random data
   gem 'ffaker'
+
+  gem 'pry'
+  gem 'pry-rails'
 end
 
