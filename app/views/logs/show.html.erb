@@ -1,43 +1,27 @@
 <%=render 'form'  %>
+<body class="Logs">
 <div class="container">
 	<div class="jumbotron_log">
+<h5><%= link_to 'Back', user_logs_path(current_user) %></h5>
 <h1>Nutrition Log Entries</h1>
-
 <!-- to view for new entry for the log that belongs to user -->
 <%= link_to "New Entry", new_user_log_entry_path(current_user, @log) %>
-
-<table>
-<!-- tr defines a row in an html table -->
-	<tr>
-		<!-- th is a header cell -->
-		<th>Date</th>
-		<!-- <th>Food</th>
-		<th>Mood</th> -->
-	</tr>
-	<!-- function begins, looping through by entry -->
+<div class=row>
+	<h3>Date:</h3>
 	<% @log.entries.each do |entry| %>
-	<tr>
-		<!-- td is a data cell -->
-		<td><%= entry.date %></td>
-		<!-- <td><%= entry.food %></td>
-		<td><%= entry.mood %></td>
-		<td><%= image_tag entry.avatar.url(:thumb) %></td> -->
-
-
-		<td><%= link_to 'Show', user_log_entry_path(current_user, @log, entry) %></td>
-        <td><%= link_to 'Edit', edit_user_log_entry_path(current_user, @log, entry) %></td>
-        <td><%= link_to 'Destroy', user_log_entry_path(current_user, @log, entry),
+	<p><%= entry.date %>
+		<button><%= link_to 'Show', user_log_entry_path(current_user, @log, entry) %></button>
+       	<button><%= link_to 'Edit', edit_user_log_entry_path(current_user, @log, entry) %></button>
+		<button><%= link_to 'Destroy', user_log_entry_path(current_user, @log, entry),
         	method: :delete,
       		data: {confirm: 'Are you sure?'} %>
-      	</td>
-	</tr>
-	<!-- function ends -->
-	<% end %>
-</table>
+      	</button>
+	</p>
+	
+		
+	<% end -%>
 </div>
 </div>
-<%= link_to 'Back', user_logs_path(current_user) %>
+</div>
 
-
-
-
+</body>
