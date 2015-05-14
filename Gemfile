@@ -71,11 +71,15 @@ group :development, :test do
   # faker; g random data
   gem 'ffaker'
 
+  gem 'pry'
+  gem 'pry-rails'
+
   gem 'capybara'
 
   # gem 'shoulda-matchers'
   # gem 'capybara'
   # gem 'guard-rspec'
   # gem 'launchy'
+
 end
 
