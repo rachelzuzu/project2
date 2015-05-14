@@ -1,4 +1,3 @@
-
 # require 'factory_girl_rails'
 # require 'factory_girl'
 require 'rails_helper'
@@ -24,6 +23,7 @@ require 'rails_helper'
 # RSpec.configure do |config|
 #   config.include FactoryGirl::Syntax::Methods
 # end
+
 
 #     def sign_in
 #       @user = FactoryGirl.create(:user)
