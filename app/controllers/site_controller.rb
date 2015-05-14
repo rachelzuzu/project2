@@ -1,7 +1,7 @@
 class SiteController < ApplicationController
 
 
-  def index
+  def Index
 
   	@user = current_user
   end
