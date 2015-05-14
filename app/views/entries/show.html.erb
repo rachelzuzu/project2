@@ -6,15 +6,9 @@
 </p>
 
 <p>
-	<strong>Food:</strong>
-	<%= @entry.food %>
-</p>
-
-<p>
 	<strong>Mood:</strong>
 	<%= @entry.mood %>
 </p>
-
 
 <p>
 	<strong>Image:</strong>
@@ -24,5 +18,14 @@
 <p>
 	<strong>Food:</strong>
 </p>
+
+<p>
+    <%= form_tag('/entries/:entry_id/reports', method: "get") do %>
+      <%= label_tag(:q, "Search for food:") %> <br>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+</p>
+
 
 <%= link_to "Back to Log #{@entry.log.id}", user_log_path(current_user, @entry.log) %>

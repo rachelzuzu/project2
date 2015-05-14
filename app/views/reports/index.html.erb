@@ -1,0 +1,10 @@
+
+<p>List of all items containing your search term:</p>
+
+
+<% @foods.each do |food| %>
+	<div>
+		<a href=<%="/entries/:entry_id/reports/:id?q=#{food['ndbno']}"%>><%= food["name"] %></a>
+	</div>
+<% end %>
+

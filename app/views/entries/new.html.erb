@@ -2,11 +2,4 @@
 
 <%= render 'form' %>
 
-<p>
-    <%= form_tag("/search", method: "get") do %>
-      <%= label_tag(:q, "Search for food:") %> <br>
-      <%= text_field_tag(:q) %>
-      <%= submit_tag("Search") %>
-    <% end %>
-</p>
 

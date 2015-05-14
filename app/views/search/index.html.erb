@@ -1,9 +1,0 @@
-<p>search page</p>
-
-
-<% @foods.each do |food| %>
-	<div>
-		<a href=<%="/report?q=#{food['ndbno']}"%>><%= food["name"] %></a>
-	</div>
-	<% end %>
-
