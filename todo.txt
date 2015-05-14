@@ -1,0 +1,41 @@
+Kristina
+
+I ate a burrito and some fries, and I want to log it into my nutrition log. First, go to url nutritionlog.com. I’m already logged in, so I start a new log. I select the date, I enter what I ate and my mood, which is -10000000.  Then I click submit.  
+
+	DONE entries#new 
+	DONE Entry _form.html.erb
+	DONE :food input field
+	food input field 'autocompletey'
+		Inject Jquery Autocomplete
+		set listener on form input
+		hit api with jquery autocomplete
+	set hidden field ndbno
+	submit to Entry#create
+		params[:entry] = {
+			"food": "burrito",
+			"mood": "-10000",
+			"date": "Feb 3, 2015"
+			"ndbno_id": "34234"
+		}
+	query the ndb-api with ndbno
+	with the responses we are going to add food-meta-data
+	return_to logs#index
+
+
+I ate a burrito and some fries, and I want to log it into my nutrition log. First, go to url nutritionlog.com. I’m already logged in, so I start a new log. I select the date, I enter my mood, which is -10000000.  Then I click next. Now I’m prompted to put in what I ate. I type “burrito” and search. I see the results and select the top one: “Chipotle Burrito”. I see the Chipotle burrito is added to my entry and I can see relevant health meta-data like protein and fat. Now I search “Fries” and select the first result. I see “McDonalds Fries” added to my entry.
+
+
+DONE entries#new 
+DONE Entry _form.html.erb
+DONE submit entry form - redirect_to entry#show
+DONE submit search - entry#show
+	@entry = Entry.find(:id)
+	if params[:term]
+	  @results = search_api(params[:term]
+	end
+DONE add to entry#show @results table
+
+DONE click on “add result to entry” button, 
+	submits form to user_log_entry#update method and adds result as a report on entry
+entry#update
+	redirect_to entries#show
