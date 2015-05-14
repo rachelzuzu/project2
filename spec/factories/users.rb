@@ -3,6 +3,7 @@ require 'ffaker'
 
 FactoryGirl.define do
   factory :user , :class => User do
+    
     password "foobar123"
     password_confirmation { |u| u.password }
     email { FFaker::Internet.email }
