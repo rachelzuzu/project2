@@ -7,10 +7,7 @@ FactoryGirl.define do
     food "whatever"
     mood 4
 
-    # date   { FFaker::Entry.date }
-    # food    { FFaker::Entry.food }
-    # mood   { FFaker::Entry.mood  }
-
   end
 
 end
+
