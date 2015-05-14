@@ -3,7 +3,7 @@ require 'ffaker'
 
 FactoryGirl.define do
   factory :entry, :class => Entry do
-    date 05/12/15
+    date 5
     food "whatever"
     mood 4
 

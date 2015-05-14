@@ -4,6 +4,7 @@
 Rails.application.routes.draw do
 
 root 'site#index'
+get '/help', to: 'site#help', as: 'help'
 
 get '/about', to: 'site#about', as: 'about'
 
