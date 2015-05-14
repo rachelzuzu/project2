@@ -1,5 +1,3 @@
-# this is cristina's branch
-#another test
 
 Rails.application.routes.draw do
 
@@ -7,6 +5,8 @@ root 'site#index'
 get '/help', to: 'site#help', as: 'help'
 
 get '/about', to: 'site#about', as: 'about'
+
+get'/contact', to:'site#contact', as:'contact'
 
 # devise_for :users
 devise_for :users do
