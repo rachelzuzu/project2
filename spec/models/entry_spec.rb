@@ -1,9 +1,8 @@
 require 'spec_helper'
 
 RSpec.describe Entry, :type => :model do
+
  # pending "add some examples to (or delete) #{__FILE__}"
-
-
 
 
  it "creates an entry" do

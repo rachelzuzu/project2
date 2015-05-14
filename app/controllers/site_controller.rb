@@ -4,4 +4,8 @@ class SiteController < ApplicationController
   	@user = current_user
   end
 
+  def about
+  	render 'about'
+  end
+
 end
