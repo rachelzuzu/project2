@@ -9,7 +9,7 @@
 			<div class = "collapse navbar-collapse navHeaderCollapse">
 				<ul class = "nav navbar-nav navbar-left">
 	<%if (current_user)  %>
-				<li class = "Logs"> <%= link_to 'Create and View a Log', user_logs_path(current_user) %> </li>
+				<li class = "Log"> <%= link_to 'Create and View a Log', user_logs_path(current_user) %> </li>
 				<li class = "SignOut"><%= link_to 'Sign out', destroy_user_session_path %> </li>
 	<%else  %>
 				<li class= "Log In"><%= link_to 'Log In', new_user_session_path %></li>
@@ -21,11 +21,15 @@
 			</div>
 		</div>
 	</div>
+	<body class="Site">
+		
+	
 <div class="container">
-	<div class="overlay">
-<h1></h1>
-<p>Welcome! This is the nutrition log! Our main objective is to track the food you eat and you're mood. 
-We want to help you make a positive change to your lifestyle.
+	<div class="jumbotron_about">
+<h1>Welcome to the Nutritional Journal! </h1>
+<p>
+
 </p>
 </div>
 </div>
+</body>
