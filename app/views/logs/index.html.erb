@@ -1,17 +1,17 @@
-This is an Index of your logs
+<%=render 'form'  %>
+	<div class="container">
+	<div class="jumbotron_log">
+<h2>Logs</h2>
 
 <% current_user.logs.each do |log| %> 
-	<p> Type : <%=log.kind%> 
-		<%=link_to 'View', user_log_path(current_user, log)%>
+	<p> 
+		<h3><%=link_to 'Nutrition', user_log_path(current_user, log)%></h3>
 		<%= link_to 'Delete', user_log_path(current_user, log),
         	method: :delete,
       		data: {confirm: 'Are you sure?'} %> </p>
 <%end%> 
 
-<%= form_for [current_user, @log] do |f| %>
-<%= f.hidden_field :kind, value: "exercise" %>
-<%= f.submit 'New Exercise Log' %>
-<% end %>
+
 
 <%= form_for [current_user, @log] do |f| %>
 <%= f.hidden_field :kind, value: "nutrition" %>
@@ -19,5 +19,7 @@ This is an Index of your logs
 <% end %>
 
 
+<%= link_to 'Back', root_path %>
 
-
+</div>
+</div>

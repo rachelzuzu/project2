@@ -1,7 +1,13 @@
+
 Rails.application.routes.draw do
 
   
 root 'site#index'
+get '/help', to: 'site#help', as: 'help'
+
+get '/about', to: 'site#about', as: 'about'
+
+get'/contact', to:'site#contact', as:'contact'
 
 #get '/search', to: 'search#index'
 #get '/report', to: 'search#report'

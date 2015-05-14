@@ -1,11 +1,44 @@
 
-
+<div class ="container">
+		<div class = "navbar navbar-default navbar-fixed-top">
+			<button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">	
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+			</button>
+			<div class = "collapse navbar-collapse navHeaderCollapse">
+				<ul class = "nav navbar-nav navbar-left">
+	<%if (current_user)  %>
+				<li class = "Logs"> <%= link_to 'View a Log', user_logs_path(current_user) %> </li>
+				<li class = "SignOut"><%= link_to 'Sign out', destroy_user_session_path %> </li>
+	<%else  %>
+				<li class= "Log In"><%= link_to 'Log In', new_user_session_path %></li>
+                <li class="SignUp"><%= link_to 'Sign up', new_user_registration_path  %></li>
+	<% end  %>
+					<li class="About"><a href="/about">About</a></li>
+					<li class="Index"><%=link_to"Home", root_path  %></li>
+					<li class= "contact"><a href="/contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="jumbotron_entry">
 <p>
 	<strong>Date:</strong>
 	<%= @entry.date %>
 </p>
 
 <p>
+<<<<<<< HEAD
+=======
+	<strong>Entry:</strong>
+	<%= @entry.food %>
+</p>
+
+<p>
+>>>>>>> e51b6b245d7b816d3d2d5f7b0076c5981de7ed00
 	<strong>Mood:</strong>
 	<%= @entry.mood %>
 </p>
@@ -14,7 +47,11 @@
 	<strong>Image:</strong>
 	<%= image_tag @entry.avatar.url(:thumb) %>
 </p>
+</div>
+</div>
+<%= link_to "Back", user_log_path(current_user, @entry.log) %>
 
+<<<<<<< HEAD
 <p>
 	<strong>Food:</strong>
 	<% @entry.reports.each do |report| %>
@@ -56,3 +93,6 @@
 
 
 <%= link_to "Back to Log #{@entry.log.id}", user_log_path(current_user, @entry.log) %>
+=======
+<!-- "Back to Log #{@entry.log.id}" -->
+>>>>>>> e51b6b245d7b816d3d2d5f7b0076c5981de7ed00

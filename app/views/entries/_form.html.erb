@@ -1,4 +1,3 @@
-
 <!-- tells form_for helper this is a form for :entry -->
 
 <%= form_for [current_user, @log, @entry] do |f| %>
@@ -27,6 +26,11 @@
   </p>
   
   <p>
+    <%= f.label :entry %><br>
+    <%= f.text_field :food %>
+  </p>
+
+   <p>
     <%= f.label :mood %><br>
     <%= f.number_field :mood %>
   </p>
