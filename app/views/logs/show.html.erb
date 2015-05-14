@@ -30,6 +30,7 @@
         	method: :delete,
       		data: {confirm: 'Are you sure?'} %>
       	</td>
+
 	</tr>
 	<!-- function ends -->
 	<% end %>
@@ -39,5 +40,14 @@
 <%= link_to 'Back', user_logs_path(current_user) %>
 
 
+<%= line_chart User.group_by_day(:created_at).count %>
+<div class="row">
 
+  <!-- Line Chart - Single Series -->
+  <div class="col-xs-6">
+    <h3>Mood By Day</h3>
+    <%= line_chart Entry.all.group_by(&:date) %>
+  </div>
+
+</div>
 

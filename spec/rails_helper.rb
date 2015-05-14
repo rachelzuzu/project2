@@ -1,6 +1,9 @@
 require 'factory_girl_rails'
 require 'factory_girl'
 # This file is copied to spec/ when you run 'rails generate rspec:install'
+require 'factory_girl_rails'
+require 'factory_girl'
+
 ENV["RAILS_ENV"] ||= 'test'
 require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
@@ -11,6 +14,9 @@ require "capybara/rspec"
 require 'capybara/rails'
 # for should testing with rspec
 require 'shoulda/matchers'
+
+# require 'factory_girl_rails'
+# require 'factory_girl'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -31,12 +37,20 @@ RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
+<<<<<<< HEAD
+   def sign_in
+=======
       def sign_in
+>>>>>>> dev
       @user = FactoryGirl.create(:user)
       controller.stub(:authenticate_user!).and_return(true)
       @user
     end
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> dev
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.

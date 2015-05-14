@@ -10,6 +10,7 @@
   <title>FoodApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great|Marck+Script|Alex+Brush|Shadows+Into+Light|Gloria+Hallelujah|Great+Vibes|Indie+Flower|Pinyon+Script|Fanwood+Text' rel='stylesheet' type='text/css'>
 </head>
@@ -27,6 +28,7 @@
 				<ul class = "nav navbar-nav navbar-right">
 	<%if (current_user)  %>
 				<li class = "Logs"> <%= link_to 'My Health Logs', user_logs_path(current_user) %> </li>
+
 				<li class = "SignOut"><%= link_to 'Sign out', destroy_user_session_path %> </li>
 	<%else  %>
 				<li class= "Log In"><%= link_to 'Log In', new_user_session_path %></li>
