@@ -1,0 +1,48 @@
+
+<!-- tells form_for helper this is a form for :entry -->
+
+<%= form_for [current_user, @log, @entry] do |f| %>
+ 
+  <% if @entry.errors.any? %>
+    <div id="error_explanation">
+
+      <!-- 
+        pluralize is a rails helper that takes a number and a string as its arguments. If the number is greater than one, the string will be automatically pluralized -->
+      <h2>
+        <%= pluralize(@entry.errors.count, "error") %> prohibited
+        this entry from being saved:
+      </h2>
+      <ul>
+        <% @entry.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <!--  f represents FormBuilder object
+ used to build 1 label and 1 text field -->
+  <p>
+    <%= f.label :date %><br>
+    <%= f.date_field :date %>
+  </p>
+
+  <p>
+    <%= f.label :entry %><br>
+    <%= f.text_field :food %>
+  </p>
+
+   <p>
+    <%= f.label :mood %><br>
+    <%= f.number_field :mood %>
+  </p>
+  
+   <p>
+    <%= f.label :image %><br>
+    <%= f.file_field :avatar %>
+   </p>
+    <!-- call to submit on f object will create a submit button for the form -->
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
