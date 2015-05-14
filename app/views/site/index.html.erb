@@ -1,14 +1,3 @@
-
-
-<%if (current_user)  %>
-<%= link_to 'Create and View a Log', user_logs_path(current_user) %> 
-</br>
-</br>
-<%= link_to 'Sign out', destroy_user_session_path %> 
-
-<% end  %>
-<%= link_to 'Sign in', new_user_session_path %> 
-
 <div class ="container">
 		<div class = "navbar navbar-default navbar-fixed-top">
 			<button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
@@ -20,9 +9,7 @@
 			<div class = "collapse navbar-collapse navHeaderCollapse">
 				<ul class = "nav navbar-nav navbar-left">
 	<%if (current_user)  %>
-
-				<li class = "Logs"> <%= link_to 'Logs', user_logs_path(current_user) %> </li>
-
+				<li class = "Log"> <%= link_to 'Logs', user_logs_path(current_user) %> </li>
 				<li class = "SignOut"><%= link_to 'Sign out', destroy_user_session_path %> </li>
 	<%else  %>
 				<li class= "Log In"><%= link_to 'Log In', new_user_session_path %></li>
@@ -34,13 +21,13 @@
 			</div>
 		</div>
 	</div>
-<body id ="Site_index">
-			<div class= "jumbotron_index">
-				<div class="container">
-<p>A home page will clearly explain what your app is and what it does.</p>
+<body class ="Site">
+	<div class="container">
+			<div class= "overlay">
+				
+<h1>Nutritional Journal</h1>
 				</div>
 			</div>
 	</div>
 
 </body>
-

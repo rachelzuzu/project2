@@ -3,3 +3,4 @@
 # RSpec.describe Log, :type => :model do
 
 # # end
+

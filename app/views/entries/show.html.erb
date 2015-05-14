@@ -10,7 +10,7 @@
 			<div class = "collapse navbar-collapse navHeaderCollapse">
 				<ul class = "nav navbar-nav navbar-left">
 	<%if (current_user)  %>
-				<li class = "Logs"> <%= link_to 'View a Log', user_logs_path(current_user) %> </li>
+				<li class = "Log"> <%= link_to 'View a Log', user_logs_path(current_user) %> </li>
 				<li class = "SignOut"><%= link_to 'Sign out', destroy_user_session_path %> </li>
 	<%else  %>
 				<li class= "Log In"><%= link_to 'Log In', new_user_session_path %></li>
@@ -23,6 +23,7 @@
 			</div>
 		</div>
 	</div>
+	<body class="entry">
 	<div class="container">
 		<div class="jumbotron_entry">
 <p>
@@ -31,14 +32,11 @@
 </p>
 
 <p>
-<<<<<<< HEAD
-=======
 	<strong>Entry:</strong>
 	<%= @entry.food %>
 </p>
 
 <p>
->>>>>>> e51b6b245d7b816d3d2d5f7b0076c5981de7ed00
 	<strong>Mood:</strong>
 	<%= @entry.mood %>
 </p>
@@ -47,11 +45,11 @@
 	<strong>Image:</strong>
 	<%= image_tag @entry.avatar.url(:thumb) %>
 </p>
-</div>
-</div>
 <%= link_to "Back", user_log_path(current_user, @entry.log) %>
+</div>
+</div>
 
-<<<<<<< HEAD
+
 <p>
 	<strong>Food:</strong>
 	<% @entry.reports.each do |report| %>
@@ -93,6 +91,5 @@
 
 
 <%= link_to "Back to Log #{@entry.log.id}", user_log_path(current_user, @entry.log) %>
-=======
-<!-- "Back to Log #{@entry.log.id}" -->
->>>>>>> e51b6b245d7b816d3d2d5f7b0076c5981de7ed00
+
+</body>
