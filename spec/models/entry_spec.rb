@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 RSpec.describe Entry, :type => :model do
-<<<<<<< HEAD
   # pending "add some examples to (or delete) #{__FILE__}"
   # # it "has a valid factory" do
   # FactoryGirl.create(:entry).should be_valid
