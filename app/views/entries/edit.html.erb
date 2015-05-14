@@ -9,7 +9,7 @@
 			<div class = "collapse navbar-collapse navHeaderCollapse">
 				<ul class = "nav navbar-nav navbar-left">
 	<%if (current_user)  %>
-				<li class = "Logs"> <%= link_to 'View a Log', user_logs_path(current_user) %> </li>
+				<li class = "Log"> <%= link_to 'View a Log', user_logs_path(current_user) %> </li>
 				<li class = "SignOut"><%= link_to 'Sign out', destroy_user_session_path %> </li>
 	<%else  %>
 				<li class= "Log In"><%= link_to 'Log In', new_user_session_path %></li>
@@ -22,11 +22,19 @@
 			</div>
 		</div>
 	</div>
+	<body class="entry">
 	<div class= "container">
 		<div class="jumbotron_entry">
 <h1>Editing entry</h1>
  
  <%= render 'form' %>
- </div>
- </div>
+ <br>
+ <div id="back">
 <%= link_to 'Back to Entries Index', user_log_entries_path(current_user, @entry.log) %>
+</div>
+<br>
+ </div>
+ </div>
+
+
+</body>

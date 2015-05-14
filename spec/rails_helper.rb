@@ -37,20 +37,14 @@ RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
-<<<<<<< HEAD
-   def sign_in
-=======
-      def sign_in
->>>>>>> dev
+
+    def sign_in
       @user = FactoryGirl.create(:user)
       controller.stub(:authenticate_user!).and_return(true)
       @user
     end
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dev
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
