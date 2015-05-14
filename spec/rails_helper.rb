@@ -1,3 +1,5 @@
+require 'factory_girl_rails'
+require 'factory_girl'
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 require 'spec_helper'
@@ -28,6 +30,12 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+
+      def sign_in
+      @user = FactoryGirl.create(:user)
+      controller.stub(:authenticate_user!).and_return(true)
+      @user
+    end
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
