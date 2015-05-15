@@ -1,0 +1,25 @@
+<%=render 'form'  %>
+	<div class="container">
+	<div class="jumbotron_log">
+<h2>Logs</h2>
+
+<% current_user.logs.each do |log| %> 
+	<p> 
+		<h3><%=link_to 'Nutrition', user_log_path(current_user, log)%></h3>
+		<%= link_to 'Delete', user_log_path(current_user, log),
+        	method: :delete,
+      		data: {confirm: 'Are you sure?'} %> </p>
+<%end%> 
+
+
+
+<%= form_for [current_user, @log] do |f| %>
+<%= f.hidden_field :kind, value: "nutrition" %>
+<%= f.submit 'New Nutrition Log' %>
+<% end %>
+
+
+<%= link_to 'Back', root_path %>
+
+</div>
+</div>

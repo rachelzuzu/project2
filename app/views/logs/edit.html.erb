@@ -1,0 +1,10 @@
+<%=render 'form' %>
+<div class ="container">
+	<div class="jumbotron_log">
+<h1>Editing entry</h1>
+ 
+ <%= render 'form' %>
+ </div>
+ </div>
+ 
+<%= link_to "Back to Logs Index", user_log_path(current_user, @log) %>

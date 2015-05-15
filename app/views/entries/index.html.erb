@@ -1,1 +1,59 @@
-Entries index.html.erb
+<div class ="container">
+		<div class = "navbar navbar-default navbar-fixed-top">
+			<button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+			</button>
+			<div class = "collapse navbar-collapse navHeaderCollapse">
+				<ul class = "nav navbar-nav navbar-left">
+	<%if (current_user)  %>
+				<li class = "Logs"> <%= link_to 'View a Log', user_logs_path(current_user) %> </li>
+				<li class = "SignOut"><%= link_to 'Sign out', destroy_user_session_path %> </li>
+	<%else  %>
+				<li class= "Log In"><%= link_to 'Log In', new_user_session_path %></li>
+                <li class="SignUp"><%= link_to 'Sign up', new_user_registration_path  %></li>
+	<% end  %>
+					<li class="About"><a href="/about">About</a></li>
+					<li class="Index"><%=link_to"Home", root_path  %></li>
+					<li class= "contact"><a href="/contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<h1>Entries for Log <%=@log.id%></h1>
+
+<!-- to view for new entry for the log that belongs to user -->
+<%= link_to "New Entry", new_user_log_entry_path(current_user, @log) %>
+
+<table>
+<!-- tr defines a row in an html table -->
+	<tr>
+		<!-- th is a header cell -->
+		<th>Date</th>
+		<th>Food</th>
+		<th>Mood</th>
+	</tr>
+	<!-- function begins, looping through by entry -->
+	<% @log.entries.each do |entry| %>
+	<tr>
+		<!-- td is a data cell -->
+		<td><%= entry.date %></td>
+		<td><%= entry.food %></td>
+		<td><%= entry.mood %></td>
+		<td><%= image_tag entry.avatar.url(:thumb) %></td>
+
+
+		<td><%= link_to 'Show', user_log_entry_path(current_user, @log, entry) %></td>
+        <td><%= link_to 'Edit', edit_user_log_entry_path(current_user, @log, entry) %></td>
+        <td><%= link_to 'Destroy', user_log_entry_path(current_user, @log, entry),
+        	method: :delete,
+      		data: {confirm: 'Are you sure?'} %>
+      	</td>
+	</tr>
+
+	<!-- function ends -->
+	<% end %>
+</table>
+
