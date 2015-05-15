@@ -21,6 +21,7 @@ I ate a burrito and some fries, and I want to log it into my nutrition log. Firs
 	with the responses we are going to add food-meta-data
 	return_to logs#index
 
+<<<<<<< HEAD
 
 I ate a burrito and some fries, and I want to log it into my nutrition log. First, go to url nutritionlog.com. I’m already logged in, so I start a new log. I select the date, I enter my mood, which is -10000000.  Then I click next. Now I’m prompted to put in what I ate. I type “burrito” and search. I see the results and select the top one: “Chipotle Burrito”. I see the Chipotle burrito is added to my entry and I can see relevant health meta-data like protein and fat. Now I search “Fries” and select the first result. I see “McDonalds Fries” added to my entry.
 
@@ -39,3 +40,5 @@ DONE click on “add result to entry” button,
 	submits form to user_log_entry#update method and adds result as a report on entry
 entry#update
 	redirect_to entries#show
+=======
+>>>>>>> ca23d20ab5ef6119c1320d51345318045ff5b834

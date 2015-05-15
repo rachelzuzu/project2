@@ -35,6 +35,16 @@ gem 'pundit'
 # for image upload
 gem "paperclip", "~> 4.2"
 
+#for rspec testing with should allow tests
+gem 'shoulda-matchers', require: false
+
+# for integrating google charts & chartkick
+gem 'chartkick', '~> 1.2.4'
+
+gem 'googlecharts'
+gem 'groupdate', '~> 2.1.1'
+gem 'active_median', '~> 0.1.0'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -55,10 +65,21 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
 
   # factory girl makes object/model creation w values
-  gem 'factory_girl_rails', "~> 4.0"
+  gem 'factory_girl_rails', "~> 4.5.0", :require => false
 
-
+  gem 'database_cleaner'
   # faker; g random data
   gem 'ffaker'
+
+  gem 'pry'
+  gem 'pry-rails'
+
+  gem 'capybara'
+
+  # gem 'shoulda-matchers'
+  # gem 'capybara'
+  # gem 'guard-rspec'
+  # gem 'launchy'
+
 end
 

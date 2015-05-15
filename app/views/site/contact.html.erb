@@ -1,2 +1,44 @@
-<h1>Site#contact</h1>
-<p>Find me in app/views/site/contact.html.erb</p>
+<div class ="container">
+		<div class = "navbar navbar-default navbar-fixed-top">
+			<button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">	
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+			</button>
+			<div class = "collapse navbar-collapse navHeaderCollapse">
+				<ul class = "nav navbar-nav navbar-left">
+	<%if (current_user)  %>
+				<li class = "Log"> <%= link_to 'Create and View a Log', user_logs_path(current_user) %> </li>
+				<li class = "SignOut"><%= link_to 'Sign out', destroy_user_session_path %> </li>
+	<%else  %>
+				<li class= "Log In"><%= link_to 'Log In', new_user_session_path %></li>
+                <li class="SignUp"><%= link_to 'Sign up', new_user_registration_path  %></li>
+	<% end  %>
+					<li class="About"><a href="/about">About</a></li>
+					<li class="Index"><%=link_to"Home", root_path  %></li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<body class="Site">
+
+	<div class="container">
+<div class="jumbotron_site"  >
+
+<h3 id="contact">
+Here's to the fruits of your labor <br>
+So ripe and full with flavor <br>
+Here's to the dream fulfilled <br>	
+To the fantastic being real <br>
+To the stars and the hills <br>
+To the power of the will <br>
+Everyday is like your birthday <br>
+Everytime is like the first time <br>
+Every walk is a parade <br>
+</h3>
+</div>
+</div>
+</body>

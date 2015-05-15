@@ -1,3 +1,48 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.overlay {
+    background-color: rgba(230, 230, 230, .3);
+    margin-top: 25%;
+    margin-bottom: 25%;
+    font-family: 'Alex Brush', cursive;
+    font-color: white;
+    font-size: 5em;
+    text-align: center;
+    position: center;
+    padding: 20px 20px;
+    border-radius: 6px;
+}
+.Site {
+    background: url(http://www.projecthappyhearts.com/wp-content/uploads/2015/04/green-nature-dual-monitor-other.jpg);
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+.jumbotron_site {
+    background-color: rgba(240, 240, 240, .6);
+    margin-top: 25%;
+    margin-bottom: 25%;
+    font-family: 'Fredericka the Great', cursive;
+    font-color: white;
+    font-size: 6em;
+    text-align: center;
+    position: center;
+    padding: 20px 20px;
+    border-radius: 6px;
+}
+.jumbotron_about {
+    background-color: rgba(240, 240, 240, .6);
+    margin-top: 25%;
+    margin-bottom: 25%;
+    font-family: 'Great Vibes', cursive;
+    font-color: white;
+    font-size: 5em;
+    text-align: center;
+    position: center;
+    padding: 20px 20px;
+    border-radius: 6px;
+}
+h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5em;
+}

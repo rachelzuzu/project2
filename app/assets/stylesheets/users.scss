@@ -1,3 +1,28 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.jumbotron_login {
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Indie Flower', cursive;
+    background-color: rgba(250, 250, 250, 0.8);
+    margin-top: 25%;
+    margin-bottom: 25%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.jumbotron_signup {
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Indie Flower', cursive;
+    background-color: rgba(250, 250, 250, 0.8);
+    margin-top: 25%;
+    margin-bottom: 25%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.user {
+    background: url(http://i00.i.aliimg.com/wsphoto/v0/1828604040/BOB-MARLEY-Reggae-font-b-Music-b-font-Poster-13x20-24x36-32x48-Inch-Silk-Fabric-Canvas.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}

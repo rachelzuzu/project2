@@ -1,13 +1,14 @@
 class LogsController < ApplicationController
-	
+
 
 	def index
 		@log=Log.new
 	end
-	
+
 	def show
 		# i want to show logs/3; its a url parameter; rake routes shows :id
 		@log=Log.find(params[:id])
+		@entry=Entry.all
 	end
 
 	def new
@@ -37,7 +38,7 @@ class LogsController < ApplicationController
     		redirect_to user_logs_path(current_user)
     	end
 
-	
+
 	# cannot call log_params in a route, unless im in the log controller; to keep it dry
 	private
 		def log_params
