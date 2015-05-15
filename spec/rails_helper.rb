@@ -1,8 +1,8 @@
 require 'factory_girl_rails'
 require 'factory_girl'
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-require 'factory_girl_rails'
-require 'factory_girl'
+# require 'factory_girl_rails'
+# require 'factory_girl'
 
 ENV["RAILS_ENV"] ||= 'test'
 require 'spec_helper'
