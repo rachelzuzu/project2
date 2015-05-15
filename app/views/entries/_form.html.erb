@@ -21,23 +21,30 @@
  <!--  f represents FormBuilder object
  used to build 1 label and 1 text field -->
   <p>
-    <%= f.label :date %><br>
     <%= f.date_field :date %>
+    <br>
+    <%= f.label :date %>
+    
   </p>
-
+  
   <p>
-    <%= f.label :entry %><br>
     <%= f.text_field :food %>
+    <br>
+    <%= f.label :entry %>
   </p>
 
    <p>
-    <%= f.label :mood %><br>
     <%= f.number_field :mood %>
+    <br>
+    <%= f.label :mood %>
   </p>
   
    <p>
-    <%= f.label :image %><br>
+    <%= f.label :image %>
+    <br>
     <%= f.file_field :avatar %>
+
+
    </p>
     <!-- call to submit on f object will create a submit button for the form -->
   <p>

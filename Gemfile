@@ -44,6 +44,12 @@ gem 'chartkick', '~> 1.2.4'
 gem 'googlecharts'
 gem 'groupdate', '~> 2.1.1'
 gem 'active_median', '~> 0.1.0'
+gem 'iso8601-js'
+
+# to commit to heroku
+group :production do
+  gem 'rails_12factor'
+end
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -71,11 +77,15 @@ group :development, :test do
   # faker; g random data
   gem 'ffaker'
 
+  gem 'pry'
+  gem 'pry-rails'
+
   gem 'capybara'
 
   # gem 'shoulda-matchers'
   # gem 'capybara'
   # gem 'guard-rspec'
   # gem 'launchy'
+
 end
 

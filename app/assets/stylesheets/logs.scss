@@ -1,8 +1,36 @@
 // Place all the styles related to the logs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.jumbotron_log {
-    background-color: rgba(200, 200, 200, 0.5);
+.jumbotron_logIndex {
+    background-color: rgba(240, 240, 240, 0.5);
     margin-top: 25%;
+    margin-bottom: 25%;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+    padding-right: 20px 10px;
+    border-radius: 6px;
+}
+.jumbotron_log {
+    background-color: rgba(230, 230, 230, 0.5);
+    margin-top: 25%;
+    margin-bottom: 25%;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 10px 30px;
+    border-radius: 6px;
+}
+.Logs {
+    background: url(http://www.projecthappyhearts.com/wp-content/uploads/2015/04/green-nature-dual-monitor-other.jpg);
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+h4 {
     text-align: left;
+}
+h5 {
+    text-align: left;
+}
+#contact {
+    text-align: center;
 }
