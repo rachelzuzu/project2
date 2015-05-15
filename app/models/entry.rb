@@ -1,12 +1,13 @@
 class Entry < ActiveRecord::Base
 	belongs_to :log
+	default_scope { order('date ASC') }
 	has_many :reports
 
 
 	validates :date, presence: true
 
 	validates :food, presence: true,
-	length: {minimum: 5}
+	length: {minimum: 3}
 
 	validates :mood, presence: true, :numericality => { :greater_than_or_equal_to => -5, :less_than_or_equal_to => 5}
 

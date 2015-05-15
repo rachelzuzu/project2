@@ -125,7 +125,7 @@ class EntriesController < ApplicationController
     @entry = Entry.find(params[:id])
     @entry.destroy
 
-      redirect_to user_log_entries_path(current_user, @entry.log)
+      redirect_to user_log_path(current_user, @entry.log)
   end
 
 # made private to make sure it can't be called outside its intended context
