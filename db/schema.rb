@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150508204433) do
+ActiveRecord::Schema.define(version: 20150514032623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,15 +20,40 @@ ActiveRecord::Schema.define(version: 20150508204433) do
     t.date     "date"
     t.text     "food"
     t.integer  "mood"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "log_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "logs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.string   "kind"
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.string   "name"
+    t.string   "ndbno"
+    t.string   "protein"
+    t.string   "fat"
+    t.string   "carb"
+    t.string   "kcal"
+    t.string   "unit"
+    t.integer  "entry_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "spas", force: :cascade do |t|
+    t.text     "content"
+    t.boolean  "completed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

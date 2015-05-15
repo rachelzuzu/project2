@@ -1,1 +1,35 @@
-logs show.html.erb
+<%=render 'form'  %>
+<body class="Logs">
+<div class="container">
+	<div class="jumbotron_log">
+<h5><%= link_to 'Back', user_logs_path(current_user) %></h5>
+<h1>Nutrition Log Entries</h1>
+<!-- to view for new entry for the log that belongs to user -->
+<%= link_to "New Entry", new_user_log_entry_path(current_user, @log) %>
+<div class=row>
+	<h3>Date:</h3>
+	<% @log.entries.each do |entry| %>
+	<p><%= entry.date %>
+		<button><%= link_to 'Show', user_log_entry_path(current_user, @log, entry) %></button>
+       	<button><%= link_to 'Edit', edit_user_log_entry_path(current_user, @log, entry) %></button>
+		<button><%= link_to 'Destroy', user_log_entry_path(current_user, @log, entry),
+        	method: :delete,
+      		data: {confirm: 'Are you sure?'} %>
+      	</button>
+	</p>
+
+
+	<% end -%>
+</div>
+
+    <h3>Mood by Day</h3>
+<%= line_chart User.group_by_day(:created_at, format: "%b %-e").count, discrete: true %>
+<div class="row">
+
+  <!-- Line Chart - Single Series -->
+  
+
+</div>
+</div>
+
+</body>

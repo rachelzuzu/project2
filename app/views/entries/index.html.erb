@@ -1,1 +1,51 @@
-Entries index.html.erb
+<div class ="container">
+		<div class = "navbar navbar-default navbar-fixed-top">
+			<button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+			</button>
+			<div class = "collapse navbar-collapse navHeaderCollapse">
+				<ul class = "nav navbar-nav navbar-left">
+	<%if (current_user)  %>
+				<li class = "Log"> <%= link_to 'View a Log', user_logs_path(current_user) %> </li>
+				<li class = "SignOut"><%= link_to 'Sign out', destroy_user_session_path %> </li>
+	<%else  %>
+				<li class= "Log In"><%= link_to 'Log In', new_user_session_path %></li>
+                <li class="SignUp"><%= link_to 'Sign up', new_user_registration_path  %></li>
+	<% end  %>
+					<li class="About"><a href="/about">About</a></li>
+					<li class="Index"><%=link_to"Home", root_path  %></li>
+					<li class= "contact"><a href="/contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<body class="entry">
+	<div class="container">
+		<div class="jumbotron_entry">
+<h1>Entries for Log <%=@log.id%></h1>
+
+<!-- to view for new entry for the log that belongs to user -->
+<div id="new">
+<%= link_to "New Entry", new_user_log_entry_path(current_user, @log) %>
+</div>	
+<br>
+<h3>Date:</h3>
+<br>
+	<% @log.entries.each do |entry| %>
+	<p><%= entry.date %>
+		<button><%= link_to 'Show', user_log_entry_path(current_user, @log, entry) %></button>
+       	<button><%= link_to 'Edit', edit_user_log_entry_path(current_user, @log, entry) %></button>
+		<button><%= link_to 'Destroy', user_log_entry_path(current_user, @log, entry),
+        	method: :delete,
+      		data: {confirm: 'Are you sure?'} %>
+
+      	</button>
+	</p>
+	<br>
+	<%end  %>
+</div>
+</div>
+</body>

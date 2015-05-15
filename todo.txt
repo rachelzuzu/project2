@@ -1,0 +1,23 @@
+Kristina
+
+I ate a burrito and some fries, and I want to log it into my nutrition log. First, go to url nutritionlog.com. I’m already logged in, so I start a new log. I select the date, I enter what I ate and my mood, which is -10000000.  Then I click submit.  
+
+	DONE entries#new 
+	DONE Entry _form.html.erb
+	DONE :food input field
+	food input field 'autocompletey'
+		Inject Jquery Autocomplete
+		set listener on form input
+		hit api with jquery autocomplete
+	set hidden field ndbno
+	submit to Entry#create
+		params[:entry] = {
+			"food": "burrito",
+			"mood": "-10000",
+			"date": "Feb 3, 2015"
+			"ndbno_id": "34234"
+		}
+	query the ndb-api with ndbno
+	with the responses we are going to add food-meta-data
+	return_to logs#index
+
