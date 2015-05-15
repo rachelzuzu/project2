@@ -44,6 +44,7 @@ gem 'chartkick', '~> 1.2.4'
 gem 'googlecharts'
 gem 'groupdate', '~> 2.1.1'
 gem 'active_median', '~> 0.1.0'
+gem 'iso8601-js'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

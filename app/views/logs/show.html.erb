@@ -22,17 +22,13 @@
 	<% end -%>
 </div>
 
+    <h3>Mood by Day</h3>
+<%= line_chart User.group_by_day(:created_at, format: "%b %-e").count, discrete: true %>
+<div class="row">
 
-+<%= line_chart User.group_by_day(:created_at).count %>
-+<div class="row">
-+
-+  <!-- Line Chart - Single Series -->
-+  <div class="col-xs-6">
-+    <h3>Daily Mood</h3>
-+    <%= line_chart Entry.all.group_by(&:date) %>
-+  </div>
+  <!-- Line Chart - Single Series -->
+  
 
-+</div>
 </div>
 </div>
 
