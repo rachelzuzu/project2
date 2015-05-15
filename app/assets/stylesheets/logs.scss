@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .jumbotron_logIndex {
-    background-color: rgba(240, 240, 240, 0.5);
+    background-color: rgba(240, 240, 240, 0.6);
     margin-top: 25%;
     margin-bottom: 25%;
     margin-left: 25%;
@@ -12,7 +12,7 @@
     border-radius: 6px;
 }
 .jumbotron_log {
-    background-color: rgba(230, 230, 230, 0.5);
+    background-color: rgba(240, 240, 240, 0.6);
     margin-top: 25%;
     margin-bottom: 25%;
     margin-left: 25%;
@@ -20,16 +20,28 @@
     padding: 10px 30px;
     border-radius: 6px;
 }
-.Logs {
-    background: url(http://www.projecthappyhearts.com/wp-content/uploads/2015/04/green-nature-dual-monitor-other.jpg);
-    background-size: auto;
-    background-repeat: no-repeat;
+p {
+    display: inline-block;
 }
 h4 {
     text-align: left;
+    font-color: black;
 }
 h5 {
     text-align: left;
+}
+input[type="submit"] {
+    border-radius: 6px;
+    background-color: white;
+}
+#new_log {
+    margin: auto;
+    text-align: left;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+#nutrition {
+    text-align: center;
 }
 #contact {
     text-align: center;

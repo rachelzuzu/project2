@@ -1,21 +1,25 @@
 <%=render 'form'  %>
-<body class="Logs">
+<div class="Logs">
 	<div class="container">
 	<div class="jumbotron_logIndex">
-<h2>Logs</h2>
-
+<div class="new_log">
 <%= form_for [current_user, @log] do |f| %>
 <%= f.hidden_field :kind, value: "nutrition" %>
 <%= f.submit 'New Nutrition Log' %>
 <% end %>
+</div>
 
+<h2>Logs</h2>
 <% current_user.logs.each do |log| %> 
 	<p> 
-		<h3><%=link_to 'Nutrition', user_log_path(current_user, log)%></h3>
-		<%= link_to 'Delete', user_log_path(current_user, log),
+		<h3 id="nutrition"><%=link_to 'Nutrition', user_log_path(current_user, log)%></h3>
+		<button type="button" class="btn btn-default"><%= link_to 'Delete', user_log_path(current_user, log),
         	method: :delete,
-      		data: {confirm: 'Are you sure?'} %> </p>
+      		data: {confirm: 'Are you sure?'} %> </button>
+      		</p>
+      		<br>
 <%end%> 
 </div>
 </div>
-</body>
+</div>
+

@@ -30,7 +30,7 @@
  <%= render 'form' %>
  <br>
  <div id="back">
-<%= link_to 'Back to Entries Index', user_log_entries_path(current_user, @entry.log) %>
+<button type="button" class="btn btn-default"><%= link_to 'Entries Index', user_log_entries_path(current_user, @entry.log) %></button>
 </div>
 <br>
  </div>

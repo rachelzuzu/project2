@@ -1,18 +1,19 @@
 <%=render 'form'  %>
-<body class="Logs">
+<div class="Logs">
 <div class="container">
 	<div class="jumbotron_log">
-<h5><%= link_to 'Back', user_logs_path(current_user) %></h5>
+<button type="button" class="btn btn-default"><%= link_to 'Back', user_logs_path(current_user) %></button>
 <h1>Nutrition Log Entries</h1>
 <!-- to view for new entry for the log that belongs to user -->
-<%= link_to "New Entry", new_user_log_entry_path(current_user, @log) %>
+<button type="button" class="btn btn-default"><%= link_to "New Entry", new_user_log_entry_path(current_user, @log) %></button>
 <div class=row>
 	<h3>Date:</h3>
 	<% @log.entries.each do |entry| %>
-	<p><%= entry.date %>
-		<button><%= link_to 'Show', user_log_entry_path(current_user, @log, entry) %></button>
-       	<button><%= link_to 'Edit', edit_user_log_entry_path(current_user, @log, entry) %></button>
-		<button><%= link_to 'Destroy', user_log_entry_path(current_user, @log, entry),
+	<h4><%= entry.date %><h4>
+		<p>
+		<button type="button" class="btn btn-default"><%= link_to 'Show', user_log_entry_path(current_user, @log, entry) %></button>
+       	<button type="button" class="btn btn-default"><%= link_to 'Edit', edit_user_log_entry_path(current_user, @log, entry) %></button>
+		<button type="button" class="btn btn-default"><%= link_to 'Destroy', user_log_entry_path(current_user, @log, entry),
         	method: :delete,
       		data: {confirm: 'Are you sure?'} %>
       	</button>
@@ -24,4 +25,4 @@
 </div>
 </div>
 
-</body>
+</div>
