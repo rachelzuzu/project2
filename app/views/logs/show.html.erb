@@ -10,9 +10,9 @@
 	<h3>Date:</h3>
 	<% @log.entries.each do |entry| %>
 	<p><%= entry.date %>
-		<button><%= link_to 'Show', user_log_entry_path(current_user, @log, entry) %></button>
-       	<button><%= link_to 'Edit', edit_user_log_entry_path(current_user, @log, entry) %></button>
-		<button><%= link_to 'Destroy', user_log_entry_path(current_user, @log, entry),
+		<button class="button-link"><%= link_to 'Show', user_log_entry_path(current_user, @log, entry) %></button>
+       	<button class="button-link"><%= link_to 'Edit', edit_user_log_entry_path(current_user, @log, entry) %></button>
+		<button class="button-link"><%= link_to 'Destroy', user_log_entry_path(current_user, @log, entry),
         	method: :delete,
       		data: {confirm: 'Are you sure?'} %>
       	</button>
