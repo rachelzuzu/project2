@@ -1,6 +1,8 @@
 
 Rails.application.routes.draw do
   
+  get 'goal/index'
+
   root 'site#index'
 
   get '/help', to: 'site#help', as: 'help'
